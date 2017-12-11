@@ -3,17 +3,31 @@ package com.powerrangers.backend.models;
 /AppUser class for user presenting
  */
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "users")
 public class AppUser {
 
+    @Column(name = "email")
     private String email;
+    @Column(name = "password")
     private String password;
+    @Column(name = "username")
     private String username;
+    @Column(name = "firstname")
     private String firstName;
+    @Column(name = "lastname")
     private String lastName;
+    @Column(name = "token")
     private String resetToken;
 
+    @Column(name = "age")
     private int age;
 
+    @Column(name = "active")
     private boolean active = false;
 
     public String getEmail() {
