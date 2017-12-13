@@ -9,5 +9,5 @@ CREATE TABLE users(
     age INT(11) NOT NULL,
     token VARCHAR(255),
     active BOOLEAN,
-    PRIMARY_KEY(username)
-)Engine=innoDB DEFAULT CHARSET=utf8;
+    PRIMARY KEY (username)
+)ENGINE=innoDB DEFAULT CHARSET=utf8;

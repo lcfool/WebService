@@ -25,12 +25,12 @@ public class UserService implements AppUserService {
 
     @Override
     public AppUser getUserByUsername(String username) {
-        return null;
+        return appUserRepository.findOne(username);
     }
 
     @Override
     public AppUser createUser(AppUser appUser) {
-        if (usernameExists(appUser.getUsername())) {
+        if (usernameExists(appUser.getUsername()) || emailExists(appUser.getEmail())) {
             return null;
         }
         appUser.setPassword(bCryptPasswordEncoder.encode(appUser.getPassword()));
@@ -53,12 +53,18 @@ public class UserService implements AppUserService {
     }
 
     @Override
-    public AppUser deleteUser(String username, String password) {
-        return null;
+    public void deleteUser(String username) {
+        // TODO: 13.12.2017 implement method when Email service is ready
+    }
+
+    @Override
+    public void activateUser(String token) {
+        // TODO: 13.12.2017 implement method when Email service is ready
     }
 
     @Override
     public AppUser resetPassword(String token) {
+        // TODO: 13.12.2017 implement method when Email service is ready
         return null;
     }
 

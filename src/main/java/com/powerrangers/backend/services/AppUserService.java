@@ -10,7 +10,9 @@ public interface AppUserService {
 
     AppUser updateUser(AppUser appUser);
 
-    AppUser deleteUser(String username, String password);
+    void deleteUser(String username);
+
+    void activateUser(String token);
 
     AppUser resetPassword(String token);
 }

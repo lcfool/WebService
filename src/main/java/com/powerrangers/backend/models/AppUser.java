@@ -5,6 +5,7 @@ package com.powerrangers.backend.models;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
@@ -13,6 +14,7 @@ public class AppUser {
 
     @Column(name = "email")
     private String email;
+    @Id
     @Column(name = "password")
     private String password;
     @Column(name = "username")
